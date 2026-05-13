@@ -30,9 +30,10 @@
 </head>
 
 <body>
+    <!-- Navbar -->
     <header>
-        <div class="navbar bg-base-100 shadow-sm px-30">
-            <div class="navbar-start">
+        <div class="navbar bg-base-100 shadow-sm md:px-15 lg:px-35">
+            <div class="navbar-start ">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -68,7 +69,57 @@
         </div>
     </header>
 
-    
+    <!-- Hero Banner -->
+    <section
+        class="flex flex-col-reverse md:flex-row justify-between items-center px-6 lg:px-20 w-11/12 mx-auto gap-10 py-10">
+        <!-- Hero content -->
+        <div class=" content flex flex-col justify-center gap-6 flex-1 text-center md:text-left">
+            <h1 class="text-4xl lg:text-5xl font-extrabold"><span class="text-blue-400 ">English</span> is Easy!!</h1>
+            <p class="font-bangla text-xl">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার
+                দক্ষতা বাড়াতে
+                চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+            <div class="input-field flex flex-col gap-4 items-center md:items-start">
+                <input type="text" placeholder="Enter your name" class="input input-bordered">
+                <input type="password" placeholder="Enter your password" class="input input-bordered">
+                <button class="btn btn-primary w-40 rounded-md">Get Started</button>
+            </div>
+        </div>
+        <!-- Hero Image -->
+        <div class="hero-img flex-1">
+            <img src="./assets/hero-student.png" alt="Hero Image" class="w-full h-auto">
+        </div>
+
+    </section>
+
+    <!-- Vocab section -->
+    <section class="py-20 px-6 lg:px-20 w-11/12 mx-auto flex flex-col gap-10 items-center">
+        <h2 class="text-3xl font-bold text-center"><span class="text-blue-400">Let's</span> Learn Vocabularies</h2>
+
+        <!-- Lesson buttons -->
+        <div class="lesson-buttons flex flex-wrap gap-6 justify-center">
+            <button class="btn btn-outline btn-primary w-40 rounded-md"><i
+                    class="fa-brands fa-leanpub"></i>Lesson-1</button>
+            <button class="btn btn-outline btn-primary w-40 rounded-md"><i
+                    class="fa-brands fa-leanpub"></i>Lesson-2</button>
+            <button class="btn btn-outline btn-primary w-40 rounded-md"><i
+                    class="fa-brands fa-leanpub"></i>Lesson-3</button>
+            <button class="btn btn-outline btn-primary w-40 rounded-md"><i
+                    class="fa-brands fa-leanpub"></i>Lesson-4</button>
+            <button class="btn btn-outline btn-primary w-40 rounded-md"><i
+                    class="fa-brands fa-leanpub"></i>Lesson-5</button>
+            <button class="btn btn-outline btn-primary w-40 rounded-md"><i
+                    class="fa-brands fa-leanpub"></i>Lesson-6</button>
+            <button class="btn btn-outline btn-primary w-40 rounded-md"><i
+                    class="fa-brands fa-leanpub"></i>Lesson-7</button>
+        </div>
+
+        <!-- empty lesson box -->
+        <div class="empty-box w-full mx-auto bg-gray-100 rounded-lg p-10 text-center">
+            <p class="font-bangla text-sm text-gray-500 mb-4">আপনি এখনো কোন Lesson Select করেন নি</p>
+            <h2 class="font-bangla text-3xl text-bold">একটি Lesson Select করুন।</h2>
+        </div>
+
+    </section>
 
 </body>
 
