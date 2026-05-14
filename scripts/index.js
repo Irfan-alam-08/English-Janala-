@@ -42,9 +42,16 @@ const displayLessonDetails = lessons => {
     cardsWrapper.innerHTML = '';
 
     if (lessons.length === 0) {
-        alert('No lesson details found for this lesson.');
-        return;
-    }
+        cardsWrapper.innerHTML = `
+            <div id="notFound-container" class="w-11/12 mx-auto bg-gray-100 rounded-3xl p-10 text-center mb-20">
+            <div class="w-full h-20 flex items-center justify-center text-7xl text-gray-500 mb-4">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <p class="font-bangla text-sm text-gray-500 mb-4">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+            <h2 class="font-bangla text-3xl text-bold">নেক্সট Lesson এ যান</h2>
+        </div>
+        `;
+    };
 
     const div = document.createElement('div');
     div.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5';
