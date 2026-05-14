@@ -1,4 +1,6 @@
+// =============================================
 // Load all lesson buttons on page load
+// =============================================
 const loadLessons = () => {
     const url = 'https://openapi.programming-hero.com/api/levels/all';
     fetch(url)
@@ -17,30 +19,55 @@ const displayLessons = lessons => {
 };
 loadLessons();
 
-// load lesson details when a lesson button is clicked
+// =============================================
+// Loader functions
+// =============================================
+const loader = document.getElementById("loader");
+function showLoader() {
+    loader.classList.remove("hidden");
+}
+function hideLoader() {
+    loader.classList.add("hidden");
+}
+
+// =============================================
+// Load lesson details when a lesson button is clicked
+// =============================================
 const loadLessonDetails = lessonId => {
+    showLoader();
+
     const url = `https://openapi.programming-hero.com/api/level/${lessonId}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displayLessonDetails(data.data));
+        .then(data => {
+            setTimeout(() => {
+                hideLoader();
+                displayLessonDetails(data.data); // data.data is the array of word objects
+            }, 1000);
+        });
 };
 
 const displayLessonDetails = lessons => {
     // hide the empty state div
     const emptyContainer = document.getElementById('empty-container');
     if (emptyContainer) emptyContainer.style.display = 'none';
-
+    
+    // =============================================
     // target the cards-wrapper div, if it doesn't exist, create it
+    // =============================================
     let cardsWrapper = document.getElementById('cards-wrapper');
     if (!cardsWrapper) {
         cardsWrapper = document.createElement('div');
         cardsWrapper.id = 'cards-wrapper';
-        cardsWrapper.className = 'w-11/12 mx-auto bg-gray-100 rounded-3xl p-4 mt-3 mb-20'; 
+        cardsWrapper.className = 'w-11/12 mx-auto bg-gray-100 rounded-3xl p-4 mt-3 mb-20';
         document.getElementById('lesson-details-container').appendChild(cardsWrapper);
     }
 
     cardsWrapper.innerHTML = '';
 
+    // =============================================
+    // if no lessons found, show the not found message
+    // =============================================
     if (lessons.length === 0) {
         cardsWrapper.innerHTML = `
             <div id="notFound-container" class="w-11/12 mx-auto bg-gray-100 rounded-3xl p-10 text-center mb-20">
@@ -51,8 +78,12 @@ const displayLessonDetails = lessons => {
             <h2 class="font-bangla text-3xl text-bold">নেক্সট Lesson এ যান</h2>
         </div>
         `;
+        return;
     };
 
+    // =============================================
+    // if lessons found, create cards for each word
+    // =============================================
     const div = document.createElement('div');
     div.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5';
 
@@ -77,14 +108,18 @@ const displayLessonDetails = lessons => {
     cardsWrapper.appendChild(div);
 };
 
+// =============================================
 // Sound button
+// =============================================
 const speakWord = word => {
     const utterance = new SpeechSynthesisUtterance(word);
     utterance.lang = 'en-US';
     window.speechSynthesis.speak(utterance);
 };
 
+// =============================================
 // Info button
+// =============================================
 const showInfo = (word, meaning) => {
     alert(`Word: ${word}\nMeaning: ${meaning}`);
 };

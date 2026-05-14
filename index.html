@@ -93,7 +93,7 @@
 
     <!-- Learn Vocab section -->
     <section class="pt-20 px-6 lg:px-20 w-11/12 mx-auto flex flex-col gap-10 items-center">
-        <h2 class="text-3xl font-bold text-center"><span class="text-blue-400">Let's</span> Learn Vocabularies</h2>
+        <h2 class="text-3xl font-bold text-center"><span class="text-blue-500">Let's</span> Learn Vocabularies</h2>
 
         <!-- Lessons level button section -->
         <div id="lessons-container" class="flex flex-wrap w-full justify-center gap-6">
@@ -102,7 +102,12 @@
 
     <!-- lesson details -->
     <section id="lesson-details-container" class="flex flex-col gap-4 pt-10">
-        
+
+        <!-- loader -->
+        <div id="loader" class="flex justify-center items-center h-40 hidden">
+            <span class="loading loading-dots loading-xl"></span>
+        </div>
+
         <!-- empty lesson box -->
         <div id="empty-container" class="w-11/12 mx-auto bg-gray-100 rounded-3xl p-10 text-center mb-20">
             <p class="font-bangla text-sm text-gray-500 mb-4">আপনি এখনো কোন Lesson Select করেন নি</p>
@@ -188,6 +193,7 @@
 
 </body>
 
+<!-- scripts -->
 <script src="./scripts/index.js"></script>
 
 </html>
