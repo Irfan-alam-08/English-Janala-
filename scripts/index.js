@@ -51,7 +51,7 @@ const displayLessonDetails = lessons => {
     // hide the empty state div
     const emptyContainer = document.getElementById('empty-container');
     if (emptyContainer) emptyContainer.style.display = 'none';
-    
+
     // =============================================
     // target the cards-wrapper div, if it doesn't exist, create it
     // =============================================
