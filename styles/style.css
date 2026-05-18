@@ -4,3 +4,11 @@
 .font-bangla {
     font-family: "Hind Siliguri", sans-serif;
 }
+
+html {
+scroll-behavior: smooth;
+}
+/* Section scrolling, even its not working bcz in the section there is already a margin more than 10 px */
+section {
+scroll-margin-top: 10px;
+}

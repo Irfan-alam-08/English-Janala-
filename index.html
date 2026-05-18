@@ -44,10 +44,9 @@
                     </div>
                     <ul tabindex="-1"
                         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a href=""><i class="fa-solid fa-circle-question"></i>FAQ</a></li>
-                        <li><a href=""><i class="fa-brands fa-leanpub"></i>Learn</a>
-                        </li>
-                        <li><a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i>logout</a></li>
+                        <li><a href="#FAQ"><i class="fa-solid fa-circle-question"></i>FAQ</a></li>
+                        <li><a href="#learn"><i class="fa-brands fa-leanpub"></i>Learn</a></li>
+                        <li><a href="javascript:void(0)"><i class="fa-solid fa-arrow-right-from-bracket"></i>logout</a></li>
                     </ul>
                 </div>
                 <a href="" class="flex items-center gap-1">
@@ -58,9 +57,9 @@
             </div>
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal px-1 space-x-4">
-                    <li><a href="" class="btn btn-outline btn-primary"><i
+                    <li><a href="#FAQ" class="btn btn-outline btn-primary"><i
                                 class="fa-solid fa-circle-question"></i>FAQ</a></li>
-                    <li><a href="" class="btn btn-outline btn-primary"><i class="fa-brands fa-leanpub"></i>Learn</a>
+                    <li><a href="#learn" class="btn btn-outline btn-primary"><i class="fa-brands fa-leanpub"></i>Learn</a>
                     </li>
                     <li><a href="" class="btn btn-outline btn-primary"><i
                                 class="fa-solid fa-arrow-right-from-bracket"></i>logout</a></li>
@@ -92,13 +91,16 @@
     </section>
 
     <!-- Learn Vocab section -->
-    <section class="pt-20 px-6 lg:px-20 w-11/12 mx-auto flex flex-col gap-10 items-center">
+    <section id="learn" class="pt-20 px-6 lg:px-20 w-11/12 mx-auto flex flex-col gap-10 items-center">
         <h2 class="text-3xl font-bold text-center"><span class="text-blue-500">Let's</span> Learn Vocabularies</h2>
 
+        <div class="flex justify-center items-center w-full gap-8">
         <div class="flex items-center gap-1">
-        <input type="search" name="search" id="search-input" placeholder="Search for words..." 
+            <input type="search" name="search" id="search-input" placeholder="Search for words..." 
             class="input input-bordered w-full max-w-xs"/>
-            <span id="search-btn" class="btn"><i class="fa-solid fa-magnifying-glass"></i></span>        
+            <span id="search-btn" class="btn"><i class="fa-solid fa-magnifying-glass"></i></span>
+        </div>
+            <button id="saved-words-btn" class="btn btn-soft text-gray-700">Saved words <i class="fa-regular fa-heart text-lg"></i></button>     
         </div>
 
         <!-- Lessons level button section -->
@@ -111,7 +113,7 @@
 
         <!-- loader -->
         <div id="loader" class="flex justify-center items-center h-40 hidden">
-            <span class="loading loading-dots loading-xl"></span>
+            <span class="loading loading-bars loading-xl"></span>
         </div>
 
         <!-- empty lesson box -->
@@ -123,7 +125,7 @@
     </section>
 
     <!-- FAQ section -->
-    <section class="py-20 px-6 lg:px-20 w-11/12 mx-auto">
+    <section id="FAQ" class="py-20 px-6 lg:px-20 w-11/12 mx-auto">
         <div>
             <h2 class="text-3xl font-bold text-center"><span class="text-blue-400">Frequently</span> Asked Questions
             </h2>
@@ -200,7 +202,6 @@
 </body>
 
 <!-- scripts -->
-<!-- <script src="./scripts/index.js"></script> -->
-<script src="./scripts/dummy.js"></script>
+<script src="./scripts/index.js"></script>
 
 </html>
